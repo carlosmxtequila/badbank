@@ -1,6 +1,13 @@
 // setup server
 // YOUR CODE
+var http = require('http');
 
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('Hello World CM!');
+  console.log(`App listening on port ${PORT}`);
+  console.log('Press Ctrl+C to quit.');
+}).listen(8080);
 // setup directory used to serve static files
 // YOUR CODE
 
