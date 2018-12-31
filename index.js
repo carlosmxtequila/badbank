@@ -2,16 +2,18 @@
 // YOUR CODE
 console.log('This example is different!');
 console.log('The result is displayed in the Command Line Interface');
+var express = require('express');
+var app     = express();
 
-var http = require('http');
+app.get('/', function(req,res){
+    res.send('Prueba inicial con cierre');
+//    res.send("Cierra con Control+C");
+});
 
-http.createServer(function (req, res) {
-  var PORT = 8080;
-  console.log('App listening on port ${PORT}');
-  console.log('Press Ctrl+C to quit.');
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World!');
-}).listen(8080);
+app.listen(8080, function(){
+    console.log('Running on port:8080');
+});
+
 
 // setup directory used to serve static files
 // YOUR CODE
